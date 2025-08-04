@@ -2,67 +2,93 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Inicia sesión - Gmail</title>
+  <title>Accede tú cuenta - G00gle</title> <!-- Error ortográfico y nombre falso -->
   <style>
     body {
-      background: #f1f1f1;
-      font-family: Roboto, Arial, sans-serif;
+      margin: 0;
+      background-color: #181818;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+    .container {
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
     }
     .login-box {
-      background: white;
+      background-color: #222;
       padding: 40px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      width: 360px;
+      border-radius: 12px;
+      width: 400px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
     }
     .logo {
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
     .logo img {
-      height: 50px;
+      width: 60px;
+      filter: brightness(1.2);
     }
-    input[type="email"], input[type="password"] {
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    input[type="text"] {
       width: 100%;
       padding: 12px;
-      margin-top: 10px;
-      margin-bottom: 20px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
     }
     button {
-      background-color: #1a73e8;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 4px;
       width: 100%;
+      padding: 12px;
+      margin-top: 20px;
+      background-color: #0070f3; /* Color diferente al azul de Google */
+      color: white;
+      border: none;
+      border-radius: 6px;
       font-size: 16px;
+      cursor: pointer;
+    }
+    .links {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 12px;
+    }
+    .links a {
+      color: #80d0ff;
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <div class="login-box">
-    <div class="logo">
-      <img src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico" alt="Gmail">
+  <div class="container">
+    <div class="login-box">
+      <div class="logo">
+        <!-- Logo incorrecto intencional -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/768px-Google_%22G%22_Logo.svg.png" alt="G00gle">
+      </div>
+      <h2>Accede tú cuenta</h2> <!-- Error ortográfico -->
+      <form onsubmit="mostrarSimulacion(); return false;">
+        <input type="text" id="correo" placeholder="Correo electrónico o teléfono" required>
+        <button type="submit">Continue</button> <!-- Texto en inglés -->
+      </form>
+      <div class="links">
+        <p>¿Perdiste tu e-mail?</p> <!-- Redacción poco profesional -->
+        <a href="#">Verificación segura</a> <!-- No hace nada -->
+      </div>
+      <p style="font-size:10px; color:gray; margin-top: 30px; text-align:center;">Este sitio es una simulación educativa. No ingrese información real.</p>
     </div>
-    <h2>Inicia sesión</h2>
-    <form onsubmit="mostrarSimulacion(); return false;">
-      <input type="email" placeholder="Correo electrónico o teléfono" id="correo" required>
-      <input type="password" placeholder="Contraseña" id="clave" required>
-      <button type="submit">Siguiente</button>
-    </form>
-    <p style="font-size:12px; color:gray; margin-top: 20px;">Este sitio es una simulación educativa de phishing.</p>
   </div>
 
   <script>
     function mostrarSimulacion() {
       const correo = document.getElementById("correo").value;
-      alert("¡Simulación de phishing!\n\nIngresaste el correo: " + correo + "\nNunca compartas tu información en sitios sospechosos.");
+      alert("¡Simulación de phishing educativa!\nHas ingresado: " + correo + "\n\nEsta página contiene errores comunes de phishing.");
     }
   </script>
 </body>
