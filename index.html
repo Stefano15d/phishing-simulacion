@@ -2,93 +2,114 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Accede tú cuenta - G00gle</title> <!-- Error ortográfico y nombre falso -->
+  <title>Instagrom - Login</title> <!-- Error intencional -->
   <style>
     body {
       margin: 0;
-      background-color: #181818;
-      font-family: Arial, sans-serif;
+      background-color: #000;
+      font-family: sans-serif;
       color: white;
-    }
-    .container {
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
     }
-    .login-box {
-      background-color: #222;
+
+    .container {
+      display: flex;
+      background-color: #000;
+      border: 1px solid #222;
+      border-radius: 8px;
       padding: 40px;
+    }
+
+    .left {
+      margin-right: 40px;
+    }
+
+    .left img {
+      max-width: 250px;
       border-radius: 12px;
-      width: 400px;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 10px rgba(255,255,255,0.2);
     }
+
+    .right {
+      width: 300px;
+    }
+
     .logo {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .logo img {
-      width: 60px;
-      filter: brightness(1.2);
-    }
-    h2 {
+      font-family: 'Comic Sans MS', cursive;
+      font-size: 38px;
       text-align: center;
       margin-bottom: 30px;
     }
-    input[type="text"] {
+
+    input {
       width: 100%;
       padding: 12px;
-      margin: 10px 0;
-      border: none;
-      border-radius: 6px;
-      font-size: 16px;
+      margin: 8px 0;
+      background-color: #121212;
+      color: white;
+      border: 1px solid #444;
+      border-radius: 4px;
     }
+
     button {
       width: 100%;
-      padding: 12px;
-      margin-top: 20px;
-      background-color: #0070f3; /* Color diferente al azul de Google */
-      color: white;
+      padding: 10px;
+      margin-top: 10px;
+      background-color: #0057f7; /* Color incorrecto intencional */
       border: none;
       border-radius: 6px;
-      font-size: 16px;
+      font-weight: bold;
+      color: white;
       cursor: pointer;
     }
-    .links {
+
+    .extras {
+      font-size: 12px;
       margin-top: 20px;
       text-align: center;
-      font-size: 12px;
+      color: #aaa;
     }
-    .links a {
-      color: #80d0ff;
-      text-decoration: underline;
+
+    .extras a {
+      color: #1da1f2;
+      text-decoration: none;
+    }
+
+    .alerta {
+      font-size: 10px;
+      text-align: center;
+      margin-top: 20px;
+      color: gray;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="login-box">
-      <div class="logo">
-        <!-- Logo incorrecto intencional -->
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/768px-Google_%22G%22_Logo.svg.png" alt="G00gle">
-      </div>
-      <h2>Accede tú cuenta</h2> <!-- Error ortográfico -->
-      <form onsubmit="mostrarSimulacion(); return false;">
-        <input type="text" id="correo" placeholder="Correo electrónico o teléfono" required>
-        <button type="submit">Continue</button> <!-- Texto en inglés -->
+    <div class="left">
+      <img src="https://i.imgur.com/hxMzKZh.jpeg" alt="Fake Insta Image"> <!-- Imagen decorativa -->
+    </div>
+    <div class="right">
+      <div class="logo">Instagrom</div> <!-- Error ortográfico -->
+      <form onsubmit="mostrarAlerta(); return false;">
+        <input type="text" id="usuario" placeholder="Teléfono, usuario o correo electrónico" required>
+        <input type="password" id="clave" placeholder="Contraseña" required>
+        <button type="submit">Iniciar sesion</button> <!-- Sin tilde -->
       </form>
-      <div class="links">
-        <p>¿Perdiste tu e-mail?</p> <!-- Redacción poco profesional -->
-        <a href="#">Verificación segura</a> <!-- No hace nada -->
+      <div class="extras">
+        <p><a href="#">¿Olvidaste tu contraseña?</a></p>
+        <p>¿No tienes una cuenta? <a href="#">Registrate</a></p> <!-- Falta tilde -->
       </div>
-      <p style="font-size:10px; color:gray; margin-top: 30px; text-align:center;">Este sitio es una simulación educativa. No ingrese información real.</p>
+      <div class="alerta">Este sitio es una simulación educativa de phishing.</div>
     </div>
   </div>
 
   <script>
-    function mostrarSimulacion() {
-      const correo = document.getElementById("correo").value;
-      alert("¡Simulación de phishing educativa!\nHas ingresado: " + correo + "\n\nEsta página contiene errores comunes de phishing.");
+    function mostrarAlerta() {
+      const usuario = document.getElementById("usuario").value;
+      alert("¡Simulación de phishing educativa!\n\nIngresaste el usuario: " + usuario + "\nNo se ha guardado ningún dato.");
     }
   </script>
 </body>
