@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Inicia sesión - Gmail</title>
+  <style>
+    body {
+      background: #f1f1f1;
+      font-family: Roboto, Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .login-box {
+      background: white;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 360px;
+    }
+    .logo {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .logo img {
+      height: 50px;
+    }
+    input[type="email"], input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      background-color: #1a73e8;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      width: 100%;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <div class="logo">
+      <img src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico" alt="Gmail">
+    </div>
+    <h2>Inicia sesión</h2>
+    <form onsubmit="mostrarSimulacion(); return false;">
+      <input type="email" placeholder="Correo electrónico o teléfono" id="correo" required>
+      <input type="password" placeholder="Contraseña" id="clave" required>
+      <button type="submit">Siguiente</button>
+    </form>
+    <p style="font-size:12px; color:gray; margin-top: 20px;">Este sitio es una simulación educativa de phishing.</p>
+  </div>
+
+  <script>
+    function mostrarSimulacion() {
+      const correo = document.getElementById("correo").value;
+      alert("¡Simulación de phishing!\n\nIngresaste el correo: " + correo + "\nNunca compartas tu información en sitios sospechosos.");
+    }
+  </script>
+</body>
+</html>
